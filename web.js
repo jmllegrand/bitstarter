@@ -8,6 +8,7 @@ app.get('/', function(request, response) {
   console.log(buffer);
   var text = buffer.toString('utf8');
   console.log(text);
+  response.send(text);
 });
 
 var port = process.env.PORT || 5000;
