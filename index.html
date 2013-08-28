@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>My first bitstarter</title>
-    <link type="text/css" rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css">
+    <!--link type="text/css" rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css"-->
 
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
 
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -14,14 +15,15 @@
             padding-top: 60px;
             font-family: 'Open Sans', sans-serif;
         }
-        .container {
+        /* Migration: a fucking bug with this hardcoding */
+        /*.container {
             width: 960px;
-        }
+        }*/
 
 
-        div.row {
+        /*div.row {
             border: 1px solid;
-        }
+        }*/
 
         .heading, .subheading {
             font-family: 'Ubuntu', sans-serif;
@@ -33,19 +35,23 @@
             line-height: 30px;
         }
 
+        /* the padding is now removed and replaced by XXX
         /*.navigation, .pitch, .section1, .section2, .faq, .footer {
             padding: 10px 0px 10px 0px;
         }*/
+
+
 
         .video, .thermometer, .order, .social {
             border: 1px dotted;
             text-align: center;
         }
 
-        .video {
+        /* Migration: another hardcoding*/
+        /*.video {
             height: 124px;
             line-height: 124px;
-        }
+        }*/
 
         .thermometer, .order, .social {
             height: 40px;
@@ -54,6 +60,21 @@
 
         div.row {
             border: 1px solid;
+        }
+
+        .asset {
+            padding: 2.5% 0%;
+        }
+
+        .copy {
+            padding-top: 2.5%;
+            padding-bottom: 2.5%;
+            text-align: justify;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 24px;
         }
 
     </style>
@@ -111,33 +132,45 @@
 
 
         <div class="row pitch">
-            <div class="span6 video">Video 480 * 300 </div>
+            <!--div class="span6 video">Video 480 * 300 </div-->
+            <div class="span6 video">
+                <img src="http://placehold.it/480x300">
+            </div>
+
             <div class="span6">
                 <div class="thermometer">Thermometer</div>
                 <div class="order">Order</div>
                 <div class="social">Social</div>
             </div>
         </div>
-        <div class="row section1">
-            <div class="span6 video"> Image 480 * 300 </div>
-            <div class="span6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue ac leo a tempor. Morbi scelerisque,
-                odio ac pulvinar iaculis, ligula orci ultricies neque, sit amet mollis risus augue in dui. Nam vestibulum aliquam purus,
-                sit amet accumsan ligula. Fusce est sapien, pulvinar ut augue ac, mollis aliquet nisl. Integer faucibus pretium metus et eleifend.
-                Mauris convallis nisi at venenatis hendrerit. Donec purus eros, varius quis cursus a, mattis in ante. Cras nunc magna, placerat
-                non mattis sed, accumsan sed velit. Nullam vitae mattis libero. Nulla facilisi. Phasellus felis tortor, gravida eu tellus nec,
-                dapibus commodo urna. Mauris tempor eros eget urna porttitor, ut porttitor ligula adipiscing. Pellentesque bibendum eget ligula
-                a commodo. Aliquam semper urna a lectus ultrices, in consectetur eros malesuada.
+        <div class="row-fluid section1 ">
+            <div class="span5 offset1 asset">
+                <img class="img-polaroid" src="http://placehold.it/480x300">
+            </div>
+            <div class="span5 copy">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue ac leo a tempor. Morbi scelerisque,
+                    odio ac pulvinar iaculis, ligula orci ultricies neque, sit amet mollis risus augue in dui. Nam vestibulum aliquam purus,
+                    sit amet accumsan ligula. Fusce est sapien, pulvinar ut augue ac, mollis aliquet nisl. Integer faucibus pretium metus et eleifend.
+                    Mauris convallis nisi at venenatis hendrerit. Donec purus eros, varius quis cursus a, mattis in ante. Cras nunc magna, placerat
+                    non mattis sed, accumsan sed velit. Nullam vitae mattis libero. Nulla facilisi. Phasellus felis tortor, gravida eu tellus nec,
+                    dapibus commodo urna.
+                </p>
             </div>
         </div>
-        <div class="row section2">
-            <div class="span6">Curabitur ligula dui, tempor in diam quis, egestas venenatis mauris. Proin felis dui, semper eget lacinia eu,
-                lobortis a elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend, libero eget mattis porta, tortor mauris
-                fringilla lectus, lacinia mattis erat libero vitae turpis. Praesent consectetur quis orci eget elementum. Nunc id velit dignissim,
-                viverra massa et, rutrum dui. Nam quis dui lorem. Fusce semper neque eget magna molestie, ut ultrices magna dignissim.
-                Sed tristique tellus in eros blandit condimentum. Fusce semper dui eget nisl ultrices porttitor. Vivamus non gravida tortor.
-                Curabitur fermentum orci et enim malesuada, id lobortis ante lobortis. In quis nibh nec orci dignissim fermentum eget vel leo.
+        <div class="row-fluid section2">
+            <div class="span5 offset1 copy">
+                <p>
+                    Curabitur ligula dui, tempor in diam quis, egestas venenatis mauris. Proin felis dui, semper eget lacinia eu,
+                    lobortis a elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend, libero eget mattis porta, tortor mauris
+                    fringilla lectus, lacinia mattis erat libero vitae turpis. Praesent consectetur quis orci eget elementum. Nunc id velit dignissim,
+                    viverra massa et, rutrum dui. Nam quis dui lorem. Fusce semper neque eget magna molestie, ut ultrices magna dignissim.
+                    Sed tristique tellus in eros blandit condimentum. Fusce semper dui eget nisl ultrices porttitor. 
+                </p>
             </div>
-            <div class="span6 video"> Image 480 * 300 </div>
+            <div class="span5 asset">
+                <img class="img-polaroid" src="http://placehold.it/480x300">
+            </div>
         </div>
         <div class="row faq">
             <div class="span12">FAQ</div>
